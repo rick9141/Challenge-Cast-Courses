@@ -1,11 +1,5 @@
 ﻿using CastCourses.Domain.Entities;
-using CastCourses.Infra.Data.Mapping;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CastCourses.Infra.Data.Context
 {
@@ -37,7 +31,7 @@ namespace CastCourses.Infra.Data.Context
 
         private string GetStringConectionConfig()
         {
-            string strCon = "Data Source=DESKTOP-HVNTI80\\DESENVOLVIMENTO;Initial Catalog=DDD_ECOMMERCE;Integrated Security=False;User ID=sa;Password=1234;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False";
+            string strCon = "Data Source=User\\SQLEXPRESS;Initial Catalog=CastCourseDb;Integrated Security=False;User ID=sa;Password=1234;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False";
             return strCon;
         }
     }
