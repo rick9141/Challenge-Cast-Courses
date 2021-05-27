@@ -24,21 +24,18 @@ namespace CastCourses.Service.Validators
                 .NotEmpty().WithMessage("Por favor, insira uma data de inicio.")
                 .NotNull().WithMessage("Por favor, insira uma data de inicio.");
 
-            RuleFor(c => c.Start)
-                .NotEmpty().WithMessage("Por favor, insira uma data de inicio.")
-                .NotNull().WithMessage("Por favor, insira uma data de inicio.");
+            RuleFor(c => c.Termination)
+                .NotEmpty().WithMessage("Por favor, insira uma data de fim.")
+                .NotNull().WithMessage("Por favor, insira uma data de fim.");
 
-            RuleFor(c => c.Start)
-                .NotEmpty().WithMessage("Por favor, insira uma data de inicio.")
-                .NotNull().WithMessage("Por favor, insira uma data de inicio.");
+            RuleFor(c => c.NumberOfStudentsPerClass)
+                .NotEmpty().WithMessage("Por favor, insira um número de estudantes por turma.")
+                .NotNull().WithMessage("Por favor, insira um número de estudantes por turma.");
 
-            RuleFor(c => c.Start)
-                .NotEmpty().WithMessage("Por favor, insira uma data de inicio.")
-                .NotNull().WithMessage("Por favor, insira uma data de inicio.");
+            RuleFor(c => c.TypeCategory)
+                .NotEmpty().WithMessage("Por favor, insira uma data de fim. categoria.")
+                .NotNull().WithMessage("Por favor, insira uma data de fim. categoria.");
 
-            RuleFor(c => c.Start)
-                .NotEmpty().WithMessage("Por favor, insira uma data de inicio.")
-                .NotNull().WithMessage("Por favor, insira uma data de inicio.");
         }
     }
 }
