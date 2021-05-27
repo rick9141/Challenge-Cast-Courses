@@ -15,4 +15,9 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.6" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CastCourses.Infra.Data\CastCourses.Infra.Data.csproj" />
+    <ProjectReference Include="..\CastCourses.Service\CastCourses.Service.csproj" />
+  </ItemGroup>
+
 </Project>

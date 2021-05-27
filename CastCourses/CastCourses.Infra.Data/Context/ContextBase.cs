@@ -1,9 +1,10 @@
 ﻿using CastCourses.Domain.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace CastCourses.Infra.Data.Context
 {
-    public class ContextBase : DbContext
+    public class ContextBase : IdentityDbContext<User>
     {
         public ContextBase(DbContextOptions<ContextBase> options) : base(options)
         {
@@ -11,7 +12,6 @@ namespace CastCourses.Infra.Data.Context
         }
 
         public DbSet<Course> Courses { get; set; }
-        public DbSet<User> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -31,7 +31,7 @@ namespace CastCourses.Infra.Data.Context
 
         private string GetStringConectionConfig()
         {
-            string strCon = "Data Source=User\\SQLEXPRESS;Initial Catalog=CastCourseDb;Integrated Security=False;User ID=sa;Password=1234;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False";
+            string strCon = "Data Source=(local)\\SQLEXPRESS;Initial Catalog=CastCourseDb;Integrated Security=False;User ID=sa;Password=123456;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False";
             return strCon;
         }
     }

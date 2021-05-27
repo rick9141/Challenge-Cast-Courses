@@ -1,17 +1,16 @@
-using CastCourses.Application.Data;
+using CastCourses.Domain.Entities;
+using CastCourses.Domain.Interfaces.Repositories;
+using CastCourses.Domain.Interfaces.Services;
+using CastCourses.Infra.Data.Context;
+using CastCourses.Infra.Data.Repository;
+using CastCourses.Service.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CastCourses.Application
 {
@@ -27,14 +26,17 @@ namespace CastCourses.Application
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<ContextBase>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddEntityFrameworkStores<ContextBase>();
             services.AddControllersWithViews();
+
+            services.AddScoped<IBaseRepository<Course>, BaseRepository<Course>>();
+            services.AddScoped<IBaseService<Course>, BaseService<Course>>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
