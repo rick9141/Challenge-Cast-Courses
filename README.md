@@ -19,7 +19,6 @@
 
 -   Utilização de conceitos básicos de introdução a metodologia de design de software DDD(Domain Driven Design)
 -   Repository Pattern
--   Service Pattern
 
 ## [](https://github.com/rick9141/challenger-cast-courses#configurando-o-projeto-)Configurando o projeto - Passo a passo 🔨
 
