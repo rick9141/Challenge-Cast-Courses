@@ -2,6 +2,7 @@
 using CastCourses.Domain.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace CastCourses.Application.Controllers
@@ -18,7 +19,7 @@ namespace CastCourses.Application.Controllers
         }
 
         // GET: api/Courses/listCourses
-        [HttpGet("listCourses")]
+        [HttpGet("getListCourses")]
         public async Task<IActionResult> ListCourses()
         {
             return Json(await _ICourse.ListCourses());
@@ -39,16 +40,16 @@ namespace CastCourses.Application.Controllers
 
             try
             {
-                //var courses = await _ICourse.ListCourses();
-                //var isValid = courses.FirstOrDefault(x => course.Start >= x.Start && course.Start <= x.Termination);
-                //if (Verifica)
-                //{
-                //    return true;
-                //    retorno.Sucess = false;
-                //    retorno.Errors.Add(string.Concat("Existe(m) curso(s) planejados(s) dentro do período informado."));
-                //}
+                var courses = await _ICourse.ListCourses();
+                var isValid = courses.FirstOrDefault(x => course.Start >= x.Start && course.Start <= x.Termination);
 
-                if (course.Start < DateTime.Now)
+                if (isValid != null)
+                {
+                    returnMsg.Sucess = false;
+                    returnMsg.Errors.Add(string.Concat("Existe(m) curso(s) planejados(s) dentro do período informado."));
+                }
+
+                else if(course.Start < DateTime.Now)
                 {
                     returnMsg.Sucess = false;
                     returnMsg.Errors.Add(string.Concat("Data de Inicio Não pode ser menor que a data de hoje"));
@@ -56,20 +57,18 @@ namespace CastCourses.Application.Controllers
                 else
                 {
                     returnMsg.Sucess = true;
-                    returnMsg.Errors.Add(string.Concat("Tudo certo por aqui!"));
+                    returnMsg.Errors.Add(string.Concat("Curso cadastrado com sucesso!"));
+                    await _ICourse.AddCourse(course);
                 }
                 return returnMsg;
 
             }
-            catch (Exception erro)
+            catch (Exception error)
             {
                 returnMsg.Sucess = false;
-                returnMsg.Errors.Add(erro.Message);
+                returnMsg.Errors.Add(error.Message);
             }
-            
-            await _ICourse.AddCourse(course);
             return returnMsg;
-
         }
 
         // PUT: api/Courses/updateCourse
@@ -85,6 +84,6 @@ namespace CastCourses.Application.Controllers
         {
             await _ICourse.DeleteCourse(course);
         }
-
     }
 }
+

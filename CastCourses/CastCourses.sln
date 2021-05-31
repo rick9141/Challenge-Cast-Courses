@@ -11,19 +11,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Data", "4.1 - Data", "{47CD2793-E0A8-4F10-A9B1-3EB13ABF118F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 - CrossCutting", "4.2 - CrossCutting", "{E3714A90-D3D2-42B9-BEA0-526D633E2AC1}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CastCourses.Domain", "CastCourses.Domain\CastCourses.Domain.csproj", "{05693DE4-AEB4-4B99-A7E6-22CA24E36E59}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CastCourses.Service", "CastCourses.Service\CastCourses.Service.csproj", "{4A7DEC01-E98A-4AB7-8E6E-EE476A068087}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CastCourses.Infra.Data", "CastCourses.Infra.Data\CastCourses.Infra.Data.csproj", "{20CF5337-F041-4F3C-A387-15265EB9F9BF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CastCourses.Infra.CrossCutting", "CastCourses.Infra.CrossCutting\CastCourses.Infra.CrossCutting.csproj", "{697C3121-E4A1-42D3-BBD4-92653D308E31}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{EA21A24F-3522-4D09-8C93-408D0C527996}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CastCourses.Application", "CastCourses.Application\CastCourses.Application.csproj", "{0B9991DF-E20A-4695-9916-A955B222417C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CastCourses.Application", "CastCourses.Application\CastCourses.Application.csproj", "{0B9991DF-E20A-4695-9916-A955B222417C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,10 +39,6 @@ Global
 		{20CF5337-F041-4F3C-A387-15265EB9F9BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20CF5337-F041-4F3C-A387-15265EB9F9BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20CF5337-F041-4F3C-A387-15265EB9F9BF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{697C3121-E4A1-42D3-BBD4-92653D308E31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{697C3121-E4A1-42D3-BBD4-92653D308E31}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{697C3121-E4A1-42D3-BBD4-92653D308E31}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{697C3121-E4A1-42D3-BBD4-92653D308E31}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0B9991DF-E20A-4695-9916-A955B222417C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0B9991DF-E20A-4695-9916-A955B222417C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B9991DF-E20A-4695-9916-A955B222417C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -57,11 +49,9 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{47CD2793-E0A8-4F10-A9B1-3EB13ABF118F} = {A8761B6F-F3B2-4E82-9AB2-B8205D4E14D9}
-		{E3714A90-D3D2-42B9-BEA0-526D633E2AC1} = {A8761B6F-F3B2-4E82-9AB2-B8205D4E14D9}
 		{05693DE4-AEB4-4B99-A7E6-22CA24E36E59} = {4199C640-3BF6-4A05-B540-C0B2C896D46C}
 		{4A7DEC01-E98A-4AB7-8E6E-EE476A068087} = {FD973A42-7A7D-43FA-87C1-1AC42F705B38}
 		{20CF5337-F041-4F3C-A387-15265EB9F9BF} = {47CD2793-E0A8-4F10-A9B1-3EB13ABF118F}
-		{697C3121-E4A1-42D3-BBD4-92653D308E31} = {E3714A90-D3D2-42B9-BEA0-526D633E2AC1}
 		{0B9991DF-E20A-4695-9916-A955B222417C} = {EA21A24F-3522-4D09-8C93-408D0C527996}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

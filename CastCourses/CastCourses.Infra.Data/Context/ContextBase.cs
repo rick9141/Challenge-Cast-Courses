@@ -1,5 +1,4 @@
 ﻿using CastCourses.Domain.Entities;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace CastCourses.Infra.Data.Context

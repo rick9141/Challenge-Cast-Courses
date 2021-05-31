@@ -1,10 +1,12 @@
 using CastCourses.Domain.Interfaces;
 using CastCourses.Domain.Interfaces.Repositories;
 using CastCourses.Domain.Interfaces.Services;
+using CastCourses.Infra.Data.Context;
 using CastCourses.Infra.Data.Repository;
 using CastCourses.Service.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,12 +26,15 @@ namespace CastCourses.Application
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CastCourses.Application", Version = "v1" });
             });
+
+            services.AddDbContext<ContextBase>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddSingleton(typeof(IBaseGeneric<>), typeof(BaseRepository<>));
 

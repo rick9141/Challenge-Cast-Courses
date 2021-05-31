@@ -5,6 +5,7 @@ namespace CastCourses.Domain.Entities
 {
     public abstract class BaseEntity
     {
+        [Key]
         [Column("id")]
         [Display(Name = "Código")]
         public virtual int Id { get; set; }
