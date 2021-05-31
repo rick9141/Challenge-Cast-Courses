@@ -40,3 +40,4 @@
 
 
 ## [](https://github.com/rick9141/challenger-cast-courses#tecnologias-implementadas-)Preview  🎥
+<img src="Documentation/Preview.png" alt="apiPreview"/>
