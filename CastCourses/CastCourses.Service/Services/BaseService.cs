@@ -1,47 +1,45 @@
 ﻿using CastCourses.Domain.Entities;
-using CastCourses.Domain.Interfaces.Repositories;
-using CastCourses.Domain.Interfaces.Services;
-using FluentValidation;
+using CastCourses.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace CastCourses.Service.Services
 {
-    public class BaseService<TEntity> : IBaseService<TEntity> where TEntity : BaseEntity
+    public class BaseService : ICourse
     {
-        private readonly IBaseRepository<TEntity> _baseRepository;
+        private readonly ICourseRepository _ICourse;
 
-        public BaseService(IBaseRepository<TEntity> baseRepository)
+        public BaseService(ICourseRepository ICourse)
         {
-            _baseRepository = baseRepository;
+            _ICourse = ICourse;
         }
 
-        public TEntity Add<TValidator>(TEntity obj) where TValidator : AbstractValidator<TEntity>
+        public async Task AddCourse(Course course)
         {
-            Validate(obj, Activator.CreateInstance<TValidator>());
-            _baseRepository.Insert(obj);
-            return obj;
+            await _ICourse.Add(course);
         }
 
-        public void Delete(int id) => _baseRepository.Delete(id);
 
-        public IList<TEntity> Get() => _baseRepository.Select();
-
-        public TEntity GetById(int id) => _baseRepository.Select(id);
-
-        public TEntity Update<TValidator>(TEntity obj) where TValidator : AbstractValidator<TEntity>
+        public async Task DeleteCourse(Course Object)
         {
-            Validate(obj, Activator.CreateInstance<TValidator>());
-            _baseRepository.Update(obj);
-            return obj;
+            await _ICourse.Delete(Object);
         }
 
-        private void Validate(TEntity obj, AbstractValidator<TEntity> validator)
+        public async Task<Course> GetCourseById(int id)
         {
-            if (obj == null)
-                throw new Exception("Registros não detectados!");
+            return await _ICourse.GetEntityById(id);
+        }
 
-            validator.ValidateAndThrow(obj);
+        public async Task<List<Course>> ListCourses()
+        {
+            return await _ICourse.List();
+        }
+
+        public async Task UpdateCourse(Course course)
+        {
+            await _ICourse.Update(course);
         }
     }
 }

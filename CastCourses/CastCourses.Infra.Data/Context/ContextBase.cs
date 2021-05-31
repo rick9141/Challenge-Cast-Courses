@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CastCourses.Infra.Data.Context
 {
-    public class ContextBase : IdentityDbContext<User>
+    public class ContextBase : DbContext
     {
         public ContextBase(DbContextOptions<ContextBase> options) : base(options)
         {
@@ -20,13 +20,6 @@ namespace CastCourses.Infra.Data.Context
                 optionsBuilder.UseSqlServer(GetStringConectionConfig());
                 base.OnConfiguring(optionsBuilder);
             }
-        }
-
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            builder.Entity<User>().ToTable("AspNetUsers").HasKey(t => t.Id);
-
-            base.OnModelCreating(builder);
         }
 
         private string GetStringConectionConfig()

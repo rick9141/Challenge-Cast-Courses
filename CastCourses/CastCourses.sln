@@ -13,17 +13,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Data", "4.1 - Data", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 - CrossCutting", "4.2 - CrossCutting", "{E3714A90-D3D2-42B9-BEA0-526D633E2AC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CastCourses.Domain", "CastCourses.Domain\CastCourses.Domain.csproj", "{05693DE4-AEB4-4B99-A7E6-22CA24E36E59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CastCourses.Domain", "CastCourses.Domain\CastCourses.Domain.csproj", "{05693DE4-AEB4-4B99-A7E6-22CA24E36E59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CastCourses.Service", "CastCourses.Service\CastCourses.Service.csproj", "{4A7DEC01-E98A-4AB7-8E6E-EE476A068087}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CastCourses.Service", "CastCourses.Service\CastCourses.Service.csproj", "{4A7DEC01-E98A-4AB7-8E6E-EE476A068087}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CastCourses.Infra.Data", "CastCourses.Infra.Data\CastCourses.Infra.Data.csproj", "{20CF5337-F041-4F3C-A387-15265EB9F9BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CastCourses.Infra.Data", "CastCourses.Infra.Data\CastCourses.Infra.Data.csproj", "{20CF5337-F041-4F3C-A387-15265EB9F9BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CastCourses.Infra.CrossCutting", "CastCourses.Infra.CrossCutting\CastCourses.Infra.CrossCutting.csproj", "{697C3121-E4A1-42D3-BBD4-92653D308E31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CastCourses.Infra.CrossCutting", "CastCourses.Infra.CrossCutting\CastCourses.Infra.CrossCutting.csproj", "{697C3121-E4A1-42D3-BBD4-92653D308E31}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{EA21A24F-3522-4D09-8C93-408D0C527996}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CastCourses.Application", "CastCourses.Application\CastCourses.Application.csproj", "{66C03549-3F69-4919-A2FC-298F7DC6CC02}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CastCourses.Application", "CastCourses.Application\CastCourses.Application.csproj", "{0B9991DF-E20A-4695-9916-A955B222417C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +47,10 @@ Global
 		{697C3121-E4A1-42D3-BBD4-92653D308E31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{697C3121-E4A1-42D3-BBD4-92653D308E31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{697C3121-E4A1-42D3-BBD4-92653D308E31}.Release|Any CPU.Build.0 = Release|Any CPU
-		{66C03549-3F69-4919-A2FC-298F7DC6CC02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{66C03549-3F69-4919-A2FC-298F7DC6CC02}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{66C03549-3F69-4919-A2FC-298F7DC6CC02}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{66C03549-3F69-4919-A2FC-298F7DC6CC02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B9991DF-E20A-4695-9916-A955B222417C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B9991DF-E20A-4695-9916-A955B222417C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B9991DF-E20A-4695-9916-A955B222417C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B9991DF-E20A-4695-9916-A955B222417C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,7 +62,7 @@ Global
 		{4A7DEC01-E98A-4AB7-8E6E-EE476A068087} = {FD973A42-7A7D-43FA-87C1-1AC42F705B38}
 		{20CF5337-F041-4F3C-A387-15265EB9F9BF} = {47CD2793-E0A8-4F10-A9B1-3EB13ABF118F}
 		{697C3121-E4A1-42D3-BBD4-92653D308E31} = {E3714A90-D3D2-42B9-BEA0-526D633E2AC1}
-		{66C03549-3F69-4919-A2FC-298F7DC6CC02} = {EA21A24F-3522-4D09-8C93-408D0C527996}
+		{0B9991DF-E20A-4695-9916-A955B222417C} = {EA21A24F-3522-4D09-8C93-408D0C527996}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {32A2A906-D55C-412B-88CD-20389ACF6B30}
