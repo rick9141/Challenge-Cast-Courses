@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CastCourses.Domain.Entities
 {
@@ -14,7 +10,9 @@ namespace CastCourses.Domain.Entities
             Errors = new List<string>();
         }
 
+        [NotMapped]
         public bool Sucess { get; set; }
+        [NotMapped]
         public List<string> Errors { get; set; }
 
     }

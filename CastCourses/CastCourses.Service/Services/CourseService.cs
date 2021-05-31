@@ -1,17 +1,16 @@
 ﻿using CastCourses.Domain.Entities;
-using CastCourses.Domain.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+using CastCourses.Domain.Interfaces.Services;
+using CastCourses.Domain.Interfaces.Repositories;
 
 namespace CastCourses.Service.Services
 {
-    public class BaseService : ICourse
+    public class CourseService : ICourseService
     {
         private readonly ICourseRepository _ICourse;
 
-        public BaseService(ICourseRepository ICourse)
+        public CourseService(ICourseRepository ICourse)
         {
             _ICourse = ICourse;
         }

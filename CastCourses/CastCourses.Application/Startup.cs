@@ -1,19 +1,14 @@
 using CastCourses.Domain.Interfaces;
+using CastCourses.Domain.Interfaces.Repositories;
+using CastCourses.Domain.Interfaces.Services;
 using CastCourses.Infra.Data.Repository;
 using CastCourses.Service.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CastCourses.Application
 {
@@ -37,9 +32,8 @@ namespace CastCourses.Application
             });
 
             services.AddSingleton(typeof(IBaseGeneric<>), typeof(BaseRepository<>));
-            //services.AddSingleton<ICourse, CourseRepository>();
 
-            services.AddScoped<ICourse, BaseService>();
+            services.AddScoped<ICourseService, CourseService>();
 
             services.AddSingleton<ICourseRepository, CourseRepository>();
         }

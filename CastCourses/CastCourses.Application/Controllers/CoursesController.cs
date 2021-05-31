@@ -1,8 +1,7 @@
 ﻿using CastCourses.Domain.Entities;
-using CastCourses.Domain.Interfaces;
+using CastCourses.Domain.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CastCourses.Application.Controllers
@@ -11,9 +10,9 @@ namespace CastCourses.Application.Controllers
     [ApiController]
     public class CoursesController : Controller
     {
-        private readonly ICourse _ICourse;
+        private readonly ICourseService _ICourse;
 
-        public CoursesController(ICourse ICourse)
+        public CoursesController(ICourseService ICourse)
         {
             _ICourse = ICourse;
         }
@@ -36,11 +35,10 @@ namespace CastCourses.Application.Controllers
         [HttpPost("newCourse")]
         public async Task<BaseReturnMessage> AddCourse(Course course)
         {
-            var retorno = new BaseReturnMessage();
+            var returnMsg = new BaseReturnMessage();
 
             try
             {
-
                 //var courses = await _ICourse.ListCourses();
                 //var isValid = courses.FirstOrDefault(x => course.Start >= x.Start && course.Start <= x.Termination);
                 //if (Verifica)
@@ -52,28 +50,25 @@ namespace CastCourses.Application.Controllers
 
                 if (course.Start < DateTime.Now)
                 {
-
-                    retorno.Sucess = false;
-                    retorno.Errors.Add(string.Concat("Data de Inicio Não pode ser menor que a data de hoje"));
+                    returnMsg.Sucess = false;
+                    returnMsg.Errors.Add(string.Concat("Data de Inicio Não pode ser menor que a data de hoje"));
                 }
-
                 else
                 {
-                    retorno.Sucess = true;
-                    retorno.Errors.Add(string.Concat("Tudo certo por aqui!"));
+                    returnMsg.Sucess = true;
+                    returnMsg.Errors.Add(string.Concat("Tudo certo por aqui!"));
                 }
-                return retorno;
+                return returnMsg;
 
             }
             catch (Exception erro)
             {
-
-                retorno.Sucess = false;
-                retorno.Errors.Add(erro.Message);
+                returnMsg.Sucess = false;
+                returnMsg.Errors.Add(erro.Message);
             }
             
             await _ICourse.AddCourse(course);
-            return retorno;
+            return returnMsg;
 
         }
 

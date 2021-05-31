@@ -1,8 +1,7 @@
 ﻿using CastCourses.Domain.Entities;
-using CastCourses.Domain.Interfaces;
+using CastCourses.Domain.Interfaces.Repositories;
 using CastCourses.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
 
 namespace CastCourses.Infra.Data.Repository
 {

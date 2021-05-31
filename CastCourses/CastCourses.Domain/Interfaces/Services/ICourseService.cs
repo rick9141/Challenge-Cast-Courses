@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace CastCourses.Domain.Interfaces
+namespace CastCourses.Domain.Interfaces.Services
 {
-    public interface ICourse
+    public interface ICourseService
     {
         Task AddCourse(Course course);
         Task UpdateCourse(Course course);

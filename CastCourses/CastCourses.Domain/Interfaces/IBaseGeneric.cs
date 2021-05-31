@@ -11,6 +11,5 @@ namespace CastCourses.Domain.Interfaces
         Task Delete(T Object);
         Task<T> GetEntityById(int Id);
         Task<List<T>> List();
-
     }
 }
