@@ -25,7 +25,8 @@
 -   Clone o projeto através do comando "git clone https://github.com/rick9141/Challenge-Cast-Courses.git"
 -   Configure a string de conexão com o banco de dados no arquivo ContextBase do projeto Infra/CastCourses.Infra.Data/Context
 -   Abra o Console do Gerenciador de Pacotes (Ferramentas > Gerenciador de pacotes do NuGet > Console do Gerenciador de Pacotes)
--   Em projeto padrão defina o CastCourses.Infra.Data, ainda no console dê o seguinte comando: Update-Database -Context ContextBase
+-   Em projeto padrão defina o CastCourses.Infra.Data, ainda no console dê o seguinte comando: 
+     Update-Database -Context ContextBase
 -   Para abrir basta executar o projeto Application/Cast.Courses.Application e irá diretamente para a pagina do Swagger.
 
 
